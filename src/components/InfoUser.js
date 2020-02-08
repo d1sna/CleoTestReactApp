@@ -4,50 +4,83 @@ export default class InfoUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: props.url,
       error: null,
+      firstLoading: true,
       isLoaded: false,
       message: null,
       login: null,
-      avatar_url: null
+      avatarUrl: null,
+      bio: null,
+      htmlUrl: null,
+      name: null,
+      company: null,
+      publicRepos: null
     };
   }
 
-  UNSAFE_componentWillReceiveProps() {
-    this._asyncRequest = fetch(this.state.url)
-      .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            message: result.message,
-            login: result.login,
-            avatar_url: result.avatar_url
-          });
-        },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      );
+  componentDidUpdate(prevProps) {
+    if (this.props.url !== prevProps.url)
+      fetch(this.props.url)
+        .then(res => res.json())
+        .then(
+          result => {
+            this.setState({
+              firstLoading: false,
+              isLoaded: true,
+              message: result.message,
+              login: result.login,
+              avatarUrl: result.avatar_url,
+              bio: result.bio,
+              htmlUrl: result.html_url,
+              name: result.name,
+              company: result.company,
+              publicRepos: result.public_repos
+            });
+          },
+          error => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        );
   }
 
   render() {
-    const { error, message, isLoaded, login, avatar_url } = this.state;
+    const {
+      error,
+      firstLoading,
+      message,
+      isLoaded,
+      login,
+      avatarUrl,
+      bio,
+      htmlUrl,
+      name,
+      company,
+      publicRepos
+    } = this.state;
     if (error) {
-      return <div>Oops...something went wrong</div>;
+      return <div className="info">Oops...something went wrong</div>;
+    } else if (firstLoading) {
+      return <div className="info">Please enter login!</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div className="info">Loading...</div>;
     } else if (message) {
-      return <div>{message}</div>;
+      return <div className="info">{message}</div>;
     } else {
       return (
-        <div>
-          <img src={avatar_url} alt="" className="avatar" />
-          <p>login:{login}</p>
-          <p>URL: {this.state.url}</p>
+        <div className="info">
+          <p>User info:</p>
+          <img src={avatarUrl} alt="" className="avatar" />
+          <p>Login: {login}</p>
+          <p>Name: {name}</p>
+          <p>Company: {company}</p>
+          <p>Bio: {bio}</p>
+          <p>
+            URL: <a href={htmlUrl}>{htmlUrl}</a>
+          </p>
+          <p>Public repositories: {publicRepos}</p>
         </div>
       );
     }

@@ -7,16 +7,17 @@ export default class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.submitHandler = this.submitHandler.bind(this);
-
     this.state = {
-      user: "gaearon"
+      user: null
     };
   }
+
   submitHandler(event) {
     event.preventDefault();
-    this.setState({ user: event.target.input.value });
+    this.setState({
+      user: event.target.input.value
+    });
     event.target.input.value = "";
-    console.log(this.state.user);
   }
 
   render() {
