@@ -1,5 +1,8 @@
 body {
-  font-size: 17px
+  font-size: 17px;
+  font-family: Palatino,
+    URW Palladio L,
+    serif;
 }
 
 
@@ -8,10 +11,19 @@ code {
     monospace;
 }
 
-input {}
+input {
+  width: 60%;
+  height: 30px;
+  text-align: center;
+}
 
 
-button {}
+button {
+  border: solid black 1px;
+  padding: 10px 24px;
+  background-color: blue;
+  text-align: center;
+}
 
 * {
   box-sizing: border-box;
@@ -23,7 +35,17 @@ body {
 }
 
 .navbar {
-  background-color: yellow;
+  background-color: rgb(92, 80, 255);
+  height: 40px;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 10%;
+  font-family: Brush Script MT,
+    Brush Script Std,
+    cursive;
+  font-size: 40px;
 }
 
 .avatar {
