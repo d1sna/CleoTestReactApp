@@ -5,7 +5,7 @@ export default class RepInfo extends React.Component {
     super(props);
     this.state = {
       isLoaded: false,
-      repos: null
+      repos: []
     };
   }
   componentDidUpdate(postProps) {
@@ -14,10 +14,10 @@ export default class RepInfo extends React.Component {
         .then(res => res.json())
         .then(
           result => {
-            console.log(result);
-
             this.setState({
-              isLoaded: true
+              isLoaded: true,
+              repos: result,
+              message: result.message
             });
           },
           error => {
@@ -29,13 +29,26 @@ export default class RepInfo extends React.Component {
         );
   }
   render() {
-    const { isLoaded, error } = this.state;
+    const { isLoaded, error, repos } = this.state;
     if (error) {
       return <div>Something went wrong...</div>;
     } else if (!isLoaded) {
       return <div>Loading ...</div>;
+    } else if (repos === null || repos.length === 0 || repos[0] === undefined) {
+      return (
+        <div>
+          User not found or reposetories is empty! Pls try another one:(
+        </div>
+      );
     } else {
-      return <div>Loaded</div>;
+      return (
+        <div>
+          List of repositories {repos[0].owner.login} :
+          {repos.map((value, index) => (
+            <li key={index}>{value.name}</li>
+          ))}
+        </div>
+      );
     }
   }
 }

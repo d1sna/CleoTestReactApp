@@ -25,7 +25,9 @@ export default class Repos extends React.Component {
       <div>
         <Nav />
         <Form submitHandler={this.submitHandler} />
-        <RepInfo url={"https://api.github.com/users/" + this.user + "/repos"} />
+        <RepInfo
+          url={"https://api.github.com/users/" + this.state.user + "/repos"}
+        />
       </div>
     );
   }
