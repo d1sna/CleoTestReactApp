@@ -1,13 +1,13 @@
 import React from "react";
 
-export default class Form extends React.Component {
-  render() {
-    return (
-      <form className="form" onSubmit={this.props.submitHandler}>
-        <p> Enter any GitHub login :</p>
-        <input id="input" className="input" placeholder="example: gaearon" />
+export default function Form(props) {
+  return (
+    <form className="form" onSubmit={props.submitHandler}>
+      <p> Enter any GitHub login :</p>
+      <input id="input" className="input" placeholder="example: gaearon" />
+      <p>
         <button className="button">Show</button>
-      </form>
-    );
-  }
+      </p>
+    </form>
+  );
 }
