@@ -61,30 +61,23 @@ export default class InfoUser extends React.Component {
       publicRepos
     } = this.state;
     if (error) {
-      return <div className="info">Oops...something went wrong</div>;
+      return <div className="info"> Oops...something went wrong </div>;
     } else if (firstLoading) {
-      return (
-        <div className="welcome">
-          <h1>Welcome to CLEO Test React App</h1>
-        </div>
-      );
+      return <div className="welcome">Welcome to CLEO Test React App </div>;
     } else if (!isLoaded) {
-      return <div className="info">Loading...</div>;
+      return <div className="info"> Loading... </div>;
     } else if (message) {
-      return <div className="info">{message}</div>;
+      return <div className="info"> {message} </div>;
     } else {
       return (
         <div className="info">
-          <p>User info:</p>
-          <img src={avatarUrl} alt="" className="avatar" />
-          <p>Login: {login}</p>
-          <p>Name: {name}</p>
-          <p>Company: {company}</p>
-          <p>Bio: {bio}</p>
+          <p> User info: </p> <img src={avatarUrl} alt="" className="avatar" />
+          <p> Login: {login} </p> <p> Name: {name} </p>{" "}
+          <p> Company: {company} </p> <p> Bio: {bio} </p>{" "}
           <p>
-            URL: <a href={htmlUrl}>{htmlUrl}</a>
-          </p>
-          <p>Public repositories: {publicRepos}</p>
+            URL: <a href={htmlUrl}> {htmlUrl} </a>{" "}
+          </p>{" "}
+          <p> Public repositories: {publicRepos} </p>{" "}
         </div>
       );
     }
