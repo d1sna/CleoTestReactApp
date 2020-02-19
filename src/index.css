@@ -1,28 +1,23 @@
 body {
-  font-size: 17px;
-  font-family: Palatino,
-    URW Palladio L,
-    serif;
+  font-family: 'Open Sans',
+    sans-serif;
+  color: $font-color;
+  font-weight: lighter;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-input {
-  width: 60%;
-  height: 30px;
-  text-align: center;
-}
-
+input {}
 
 button {
-  border: solid black 1px;
-  padding: 10px 24px;
-  background-color: blue;
-  text-align: center;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65);
+  font-size: 110%;
 }
 
 * {
@@ -31,20 +26,20 @@ button {
 
 body {
   margin: 0px;
-  font-family: 'segoe ui';
+  font-family: "segoe ui";
 }
 
 .navbar {
-  background-color: rgb(92, 80, 255);
-  height: 40px;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  height: 34px;
+  align-content: center;
+  text-align: center;
 }
 
 .welcome {
   text-align: center;
   margin-top: 10%;
-  font-family: Brush Script MT,
-    Brush Script Std,
-    cursive;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   font-size: 40px;
 }
 
@@ -60,7 +55,21 @@ body {
   text-align: center;
 }
 
+.input {
+  width: 30%;
+  height: 34px;
+  font-size: 14px;
+}
+
 .info {
+
   text-align: center;
   margin-top: 1cm;
+}
+
+.link {
+  margin-left: 15px;
+  color: #061a40;
+  font: 12px HKNova-bold, sans-serif;
+  font-size: 110%;
 }
