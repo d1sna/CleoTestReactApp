@@ -1,4 +1,5 @@
 import React from "react";
+import CheckBox from "./CheckBox";
 
 export default class RepInfo extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ export default class RepInfo extends React.Component {
               isLoaded: true,
               repos: result,
               message: result.message,
-              firstLoading: false
+              firstLoading: false,
+              forSort: false
             });
           },
           error => {
@@ -64,22 +66,23 @@ export default class RepInfo extends React.Component {
       );
     } else if (forSort) {
       return (
-        <div>
-          Sorted list of repositories:
+        <div className="info">
+          Sorted (by stargazers_count) list of repositories:
           {sortedArr.map((value, index) => (
-            <li key={index}>
-              {value.name}({value.stargazers_count})
-            </li>
+            <CheckBox
+              key={index}
+              label={value.name + " " + value.stargazers_count}
+            />
           ))}
         </div>
       );
     } else {
       return (
-        <div>
-          List of repositories {repos[0].owner.login} :{" "}
+        <div className="info">
           <button onClick={this.sortFunction}>Sort it</button>
+          <p>List of repositories ({repos[0].owner.login}) :</p>
           {repos.map((value, index) => (
-            <li key={index}>{value.name}</li>
+            <p key={index}>{value.name}</p>
           ))}
         </div>
       );

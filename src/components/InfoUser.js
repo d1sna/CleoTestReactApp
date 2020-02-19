@@ -63,7 +63,7 @@ export default class InfoUser extends React.Component {
     if (error) {
       return <div className="info"> Oops...something went wrong </div>;
     } else if (firstLoading) {
-      return <div className="welcome">Welcome to CLEO Test React App </div>;
+      return <div className="welcome"> Welcome to CLEO Test React App </div>;
     } else if (!isLoaded) {
       return <div className="info"> Loading... </div>;
     } else if (message) {

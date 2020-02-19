@@ -22,7 +22,7 @@ export default class UserProfile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="page">
         <NavBar />
         <Form submitHandler={this.submitHandler} />
         <InfoUser url={"https://api.github.com/users/" + this.state.user} />
