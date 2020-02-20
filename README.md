@@ -1,7 +1,6 @@
-  																					Test React App for CLEO.one :)
-																						
-	This is test project for CLEO.one. Inside app you can put any github login and catch information about user, user's reposetories and another information about it. 
-	
+  															                        Test React App for CLEO.one	
+        This is test project for CLEO.one. Inside app you can put any github login and catch information about user, user's reposetories and another information about it. 
+        
 Techs
 React, React Router, ES6, Input Validations, Source Control Tool (Git/Bitbucket)
 
