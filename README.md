@@ -1,4 +1,5 @@
-Test React App for CLEO.one
+<h1>Test React App for CLEO.one<h1>
+  
 This is test project for CLEO.one. Inside app you can put any github login and catch
 informationabout user, user's reposetories and another information about it.
 
@@ -17,7 +18,7 @@ Details:
 Tips:
 
 - GitHub API
-  User Detail: (https://api.github.com/users/gaearon)
+  User Detail: (<https://api.github.com/users/gaearon>)
   Repos : (https://api.github.com/users/gaearon/repos)
 - Technologies
   Avoid using libraries implement your own filtering, sorting...
