@@ -1,5 +1,5 @@
 <h1>Test React App for CLEO.one
-
+<div>
 This is test project for CLEO.one. Inside app you can put any github login and catch
 informationabout user, user's reposetories and another information about it.
 
