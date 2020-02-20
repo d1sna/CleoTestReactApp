@@ -1,6 +1,6 @@
 <h1>Test React App for CLEO.one<h1>
 
-<h>   This is test project for CLEO.one. Inside app you can put any github login and catch
+<hr>   This is test project for CLEO.one. Inside app you can put any github login and catch
 informationabout user, user's reposetories and another information about it.
 
 Techs
@@ -22,4 +22,4 @@ Tips:
   Repos : (https://api.github.com/users/gaearon/repos)
 - Technologies
   Avoid using libraries implement your own filtering, sorting...
-<h>
+<hr>
